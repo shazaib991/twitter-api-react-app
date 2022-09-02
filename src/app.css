@@ -4,3 +4,14 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.mid-section-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.mid-section {
+  width: 95%;
+  display: flex;
+}
