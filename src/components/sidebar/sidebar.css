@@ -12,18 +12,19 @@
 
 .sidebar-user-add input {
   width: 100%;
-  height: 35px;
+  height: 38px;
   outline: none;
-  border-radius: 15px;
+  border-radius: 20px;
   border: none;
   background-color: rgb(217, 217, 217);
   padding: 0 10px;
 }
 
 .sidebar-users-list-container {
-  height: 91%;
+  height: 90.5%;
   background-color: rgb(245, 243, 243);
   margin-top: 10px;
+  overflow-y: auto;
 }
 
 .sidebar-users-list {

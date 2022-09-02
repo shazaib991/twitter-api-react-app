@@ -13,7 +13,7 @@ function Sidebar() {
             <p>Barak Obama @BarakObama</p>
           </div>
           <div className="sidebar-users-list">
-            <p>Barak Obama @BarakObama</p>
+            <p>Joe Biden @JoeBiden</p>
           </div>
         </div>
       </div>
