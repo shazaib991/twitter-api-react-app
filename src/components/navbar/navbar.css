@@ -1,0 +1,52 @@
+.navbar-container {
+  width: 100vw;
+  height: 70px;
+  background: linear-gradient(90deg, black, rgb(95, 169, 211));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo h1 {
+  color: white;
+  margin-left: 15px;
+  font-size: 3.5rem;
+}
+
+.navbar-dark-mode-and-profile {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-dark-mode-container {
+  height: 30px;
+  width: 65px;
+  background-color: rgb(28, 42, 33);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navbar-dark-mode-container div {
+  height: 20px;
+  width: 20px;
+  margin-left: 8px;
+  border-radius: 50%;
+  background-color: rgb(95, 169, 211);
+}
+
+.navbar-dark-mode-container.active .navbar-dark-mode-container div {
+  background-color: red;
+}
