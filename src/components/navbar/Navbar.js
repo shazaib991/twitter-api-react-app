@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { useRef } from "react";
 import "./navbar.css";
 
-function Navbar() {
+function Navbar({ setIsDarkMode }) {
   const darkModeRef = useRef(null);
 
   const handleDarkMode = () => {
     darkModeRef.current.classList.toggle("active");
+    setIsDarkMode((prevState) => !prevState);
   };
 
   return (

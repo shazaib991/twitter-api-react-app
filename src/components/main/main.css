@@ -9,6 +9,13 @@
   width: 100%;
   height: 95%;
   margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-search-tweets {
+  position: relative;
 }
 
 .main-search-tweets input {
@@ -18,11 +25,40 @@
   border-radius: 20px;
   border: none;
   background-color: rgb(217, 217, 217);
-  padding: 0 10px;
+  padding: 0 15px;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.main-container.dark-active .main-search-tweets input {
+  background-color: rgb(41, 41, 41);
+  color: white;
+}
+
+.main-search-tweets input::placeholder {
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.main-container.dark-active .main-search-tweets input::placeholder {
+  color: white;
+}
+
+.main-search-tweets svg {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.main-container.dark-active .main-search-tweets svg {
+  color: white;
 }
 
 .main-tweets-container {
-  height: 90.5%;
+  height: 100%;
   margin-top: 10px;
   overflow-y: auto;
 }
@@ -31,6 +67,11 @@
   background-color: rgb(245, 243, 243);
   padding: 8px 10px;
   margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.main-container.dark-active .main-tweet {
+  background-color: rgb(80, 80, 80);
 }
 
 .main-tweet-profile-and-name {
@@ -68,4 +109,27 @@
   line-height: 18px;
   font-weight: 500;
   color: rgb(119, 119, 119);
+  transition: all 0.3s ease;
+}
+
+.main-tweet-name {
+  transition: all 0.3s ease;
+}
+
+.main-container.dark-active .main-tweet-text p {
+  color: white;
+}
+
+.main-container.dark-active .main-tweet-name p {
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .main-container {
+    width: 100%;
+  }
+
+  .main {
+    margin: 0;
+  }
 }

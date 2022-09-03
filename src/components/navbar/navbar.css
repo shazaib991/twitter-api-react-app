@@ -5,6 +5,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .navbar {
@@ -45,8 +48,9 @@
   margin-left: 8px;
   border-radius: 50%;
   background-color: rgb(95, 169, 211);
+  transition: all 0.3s ease;
 }
 
-.navbar-dark-mode-container.active .navbar-dark-mode-container div {
-  background-color: red;
+.navbar-dark-mode-container.active div {
+  margin-left: 35px;
 }

@@ -8,6 +8,9 @@
 .sidebar {
   height: 95%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .sidebar-user-add input {
@@ -17,14 +20,54 @@
   border-radius: 20px;
   border: none;
   background-color: rgb(217, 217, 217);
-  padding: 0 10px;
+  padding: 0 15px;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.sidebar-container.dark-active .sidebar-user-add input {
+  background-color: rgb(41, 41, 41);
+  color: white;
+}
+
+.sidebar-user-add input::placeholder {
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.sidebar-container.dark-active .sidebar-user-add input::placeholder {
+  color: white;
+}
+
+.sidebar-user-add {
+  position: relative;
+}
+
+.sidebar-user-add button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 38px;
+  border: none;
+  background: linear-gradient(90deg, black, rgb(95, 169, 211));
+  width: 80px;
+  border-radius: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
 }
 
 .sidebar-users-list-container {
-  height: 90.5%;
+  height: 100%;
   background-color: rgb(245, 243, 243);
   margin-top: 10px;
   overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+.sidebar-container.dark-active .sidebar-users-list-container {
+  background-color: rgb(80, 80, 80);
 }
 
 .sidebar-users-list {
@@ -34,9 +77,25 @@
 
 .sidebar-users-list.active {
   background-color: rgb(217, 217, 217);
+  transition: all 0.3s ease;
+}
+
+.sidebar-container.dark-active .sidebar-users-list.active {
+  background-color: rgb(41, 41, 41);
 }
 
 .sidebar-users-list p {
   font-size: 1.8rem;
   font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.sidebar-container.dark-active .sidebar-users-list p {
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar-container {
+    width: 100%;
+  }
 }

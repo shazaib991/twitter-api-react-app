@@ -9,9 +9,20 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.mid-section-container.dark-active {
+  background-color: black;
 }
 
 .mid-section {
   width: 95%;
   display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .mid-section {
+    flex-direction: column;
+  }
 }
