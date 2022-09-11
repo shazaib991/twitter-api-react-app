@@ -1,3 +1,4 @@
+/* main */
 .main-container {
   height: calc(100vh - 140px);
   width: 70%;
@@ -112,7 +113,7 @@
   transition: all 0.3s ease;
 }
 
-.main-tweet-name {
+.main-tweet-name p {
   transition: all 0.3s ease;
 }
 

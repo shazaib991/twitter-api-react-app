@@ -1,13 +1,23 @@
-import React from "react";
+import { React, useEffect, useState } from "react";
 import "./main.css";
-import barakObamaImage from "../../images/barak-obama.jpg";
 
-function Main({ isDarkMode }) {
+function Main({ isDarkMode, tweets, setTweets }) {
+  const [searchTweet, setSearchTweet] = useState("");
+
+  const handleSearchTweetChange = (e) => {
+    setSearchTweet(e.target.value);
+  };
+
   return (
     <div className={`main-container ${isDarkMode ? "dark-active" : ""}`}>
       <div className="main">
         <div className="main-search-tweets">
-          <input type="text" placeholder="Search Tweets" />
+          <input
+            type="text"
+            placeholder="Search Tweets"
+            onChange={handleSearchTweetChange}
+            value={searchTweet}
+          />
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -20,101 +30,32 @@ function Main({ isDarkMode }) {
           </svg>
         </div>
         <div className="main-tweets-container">
-          <div className="main-tweet">
-            <div className="main-tweet-profile-and-name">
-              <div className="main-tweet-profile">
-                <img src={barakObamaImage} alt="barak obama" />
-              </div>
-              <div className="main-tweet-name">
-                <p>Barak Obama</p>
-                <p>@Barak Obama</p>
-              </div>
-            </div>
-            <div className="main-tweet-text">
-              <p>
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s, of type scrambled it to make a type. Barak he
-                to make a type. Barak he to make a type. Barak he to make a
-                type. Barak he.
-              </p>
-            </div>
-          </div>
-          <div className="main-tweet">
-            <div className="main-tweet-profile-and-name">
-              <div className="main-tweet-profile">
-                <img src={barakObamaImage} alt="barak obama" />
-              </div>
-              <div className="main-tweet-name">
-                <p>Barak Obama</p>
-                <p>@Barak Obama</p>
-              </div>
-            </div>
-            <div className="main-tweet-text">
-              <p>
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s, of type scrambled it to make a type. Barak he
-                to make a type. Barak he to make a type. Barak he to make a
-                type. Barak he.
-              </p>
-            </div>
-          </div>
-          <div className="main-tweet">
-            <div className="main-tweet-profile-and-name">
-              <div className="main-tweet-profile">
-                <img src={barakObamaImage} alt="barak obama" />
-              </div>
-              <div className="main-tweet-name">
-                <p>Barak Obama</p>
-                <p>@Barak Obama</p>
-              </div>
-            </div>
-            <div className="main-tweet-text">
-              <p>
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s, of type scrambled it to make a type. Barak he
-                to make a type. Barak he to make a type. Barak he to make a
-                type. Barak he.
-              </p>
-            </div>
-          </div>
-          <div className="main-tweet">
-            <div className="main-tweet-profile-and-name">
-              <div className="main-tweet-profile">
-                <img src={barakObamaImage} alt="barak obama" />
-              </div>
-              <div className="main-tweet-name">
-                <p>Barak Obama</p>
-                <p>@Barak Obama</p>
-              </div>
-            </div>
-            <div className="main-tweet-text">
-              <p>
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s, of type scrambled it to make a type. Barak he
-                to make a type. Barak he to make a type. Barak he to make a
-                type. Barak he.
-              </p>
-            </div>
-          </div>
-          <div className="main-tweet">
-            <div className="main-tweet-profile-and-name">
-              <div className="main-tweet-profile">
-                <img src={barakObamaImage} alt="barak obama" />
-              </div>
-              <div className="main-tweet-name">
-                <p>Barak Obama</p>
-                <p>@Barak Obama</p>
-              </div>
-            </div>
-            <div className="main-tweet-text">
-              <p>
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s, of type scrambled it to make a type. Barak he
-                to make a type. Barak he to make a type. Barak he to make a
-                type. Barak he.
-              </p>
-            </div>
-          </div>
+          {tweets.length !== 0 &&
+            tweets[0].tweets.data
+              .filter((item) =>
+                item.text.toLowerCase().includes(searchTweet.toLowerCase())
+              )
+              .map((tweet, index) => {
+                return (
+                  <div className="main-tweet" key={index}>
+                    <div className="main-tweet-profile-and-name">
+                      <div className="main-tweet-profile">
+                        {/* <img
+                        src={require(`../../images/${tweet.tweets.data}`)}
+                        alt="barak obama"
+                      /> */}
+                      </div>
+                      <div className="main-tweet-name">
+                        <p>{tweets[0].user.data.name}</p>
+                        <p>{`@${tweets[0].user.data.username}`}</p>
+                      </div>
+                    </div>
+                    <div className="main-tweet-text">
+                      <p>{tweet.text}</p>
+                    </div>
+                  </div>
+                );
+              })}
         </div>
       </div>
     </div>

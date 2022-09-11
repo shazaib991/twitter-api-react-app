@@ -19,10 +19,15 @@
 .mid-section {
   width: 95%;
   display: flex;
+  max-width: 1920px;
 }
 
 @media screen and (max-width: 768px) {
   .mid-section {
     flex-direction: column;
   }
+
+  /* .sections-container {
+    height: 200vh;
+  } */
 }
